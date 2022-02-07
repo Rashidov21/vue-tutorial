@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    background-color: #1D1E23;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+p {
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1440px;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+header {
+    background-color: #BEEF4D;
+}
+
+nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+.logo {
+    position: relative;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+nav ul li a {
+    color: #1D1E23;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.banner {
+    width: 100%;
+    height: 800px;
+    background: url('../src/fifa1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.banner .text {
+    padding-top: 170px;
+}
+
+.banner .text h1,
+h2 {
+    color: #BEEF4D;
+}
+
+.fifa {
+    font-size: 3em;
+}
+
+.play-text {
+    font-size: 2.5em;
+}
