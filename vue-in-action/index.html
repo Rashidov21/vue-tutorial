@@ -6,12 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.css">
     <title>Vue-in-Action: Book</title>
 </head>
 
 <body>
     <div id="app">
+        <nav class="navbar navbar-light bg-primary pl-5 pr-5">
+            <div class="container justify-content-around">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/snake.png" alt="" width="50" class="d-inline-block align-text-top"> SnakeVue
+                </a>
+                <a href="#" class="btn btn-light text-black">My Cart :
+                    <i class="fas fa-shopping-cart"></i> {{cartItemCount}}</a>
+            </div>
+        </nav>
+        <br><br>
         <main class="container">
 
             <section class="row align-items-center">
@@ -23,13 +34,16 @@
                         <div class="row">
                             <div class="col">
                                 <figure>
-                                    <img :src="product.image" class="card-img" alt="">
+                                    <img src="" class="card-img" alt="">
                                 </figure>
                             </div>
                             <div class="col col-expand">
-                                <h3 class="card-title" v-text="product.title"></h3>
-                                <h4>$<big v-text="product.price"></big></h4>
-                                <p v-text="product.description"></p>
+                                <h3 class="card-title"></h3>
+                                <h4>$<big>0</big></h4>
+                                <p></p>
+                                <a href="#" @click="addToCart" class="btn btn-success mt-5">Add to cart</a>
+                                <br>
+
                             </div>
                         </div>
                     </div>
