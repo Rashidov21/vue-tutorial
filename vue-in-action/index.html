@@ -70,22 +70,71 @@
         <main id="cart">
             <div class="container" v-if="showProduct">
                 <div class="row">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        Cart Items And Checkout
+                    </div>
+                    <div class="col-md-8">
                         <div class="form p-5">
                             <form action="#">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <input type="text" v-model="order.firstName" class="form-control">
+                                <div class="row card p-2">
+                                    <div class="col-sm-8 m-1">
+                                        <input type="text" v-model="order.firstName" class="form-control" placeholder="Firts Name">
                                     </div>
-                                    <div class="col-sm-8">
-                                        <input type="text" v-model="order.lastName" class="form-control">
+                                    <div class="col-sm-8 m-1">
+                                        <input type="text" v-model="order.lastName" class="form-control" placeholder="Last Name">
                                     </div>
-                                    <div class="col-sm-12">
-                                        <pre>
-                                            First Name : {{order.firstName}}
-                                            Last Name : {{order.lastName}}
-                                        </pre>
+                                    <div class="col-sm-8 m-1">
+                                        <input type="text" v-model="order.address" class="form-control" placeholder="Address">
+                                    </div>
+                                    <div class="col-sm-8 m-1">
+                                        <select name="states" id="" v-model="order.state" class="form-control">
+                                            <option disabled>Select state</option>
+                                            <option v-for="(state, key) in order.states" v-bind:value="state">{{key}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-8 m-1">
+                                        <input type="text" v-model="order.zip" class="form-control" placeholder="Postal code / Zip">
+                                    </div>
+                                    <div class="col-sm-8 m-1">
+                                        <label for="gift">Gift ?</label>
+                                        <input type="checkbox" id="gift" v-model="order.gift">
+                                    </div>
+                                    <div class="col-sm-6 m-1">
+                                        <label for="home">Home</label>
+                                        <input type="radio" name="home" :value="order.home" id="home" v-model="order.method">
+                                    </div>
+                                    <div class="col-sm-6 m-1">
+                                        <label for="business">Business</label>
+                                        <input type="radio" name="home" :value="order.business" id="business" v-model="order.method">
+                                    </div>
+                                    <input type="submit" class="btn btn-success mt-3" @click="submitForm">
+                                </div>
+                                <div class="row card p-2 mt-2">
+                                    <div class="col-sm-12 h5 text-left">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <span> First Name : {{order.firstName}}</span>
+                                            </li>
+                                            <li>
+                                                <span>Last Name : {{order.lastName}}</span>
+                                            </li>
+                                            <li>
+                                                <span>Address : {{order.address}}</span>
+                                            </li>
+                                            <li>
+                                                <span>State : {{order.state}}</span>
+                                            </li>
+                                            <li>
+                                                <span>Zip : {{order.zip}}</span>
+                                            </li>
+                                            <li>
+                                                <span>Gift : {{order.gift}}</span>
+                                            </li>
+                                            <li>
+                                                <span>Method : {{order.method}}</span>
+                                            </li>
+
+                                        </ul>
                                     </div>
                                 </div>
                             </form>

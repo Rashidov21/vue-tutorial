@@ -5,7 +5,19 @@ let app = new Vue({
         showProduct: true,
         order: {
             firstName: "",
-            lastName: ""
+            lastName: "",
+            address: "",
+            state: "",
+            states: {
+                AND: "Andijan",
+                NAM: "Namangan",
+                FER: "Fergana",
+            },
+            zip: "",
+            gift: false,
+            method: "Please select shipping method",
+            home: "Home address for shipping",
+            business: "Business address for shipping",
         },
         product: {
             id: 001,
@@ -50,6 +62,9 @@ let app = new Vue({
         showCheckout() {
             this.showProduct = !this.showProduct
         },
+        submitForm() {
+
+        }
     },
     computed: {
         cartItemCount: function() {
