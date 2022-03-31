@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/snake.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -18,12 +19,21 @@
                 <a class="navbar-brand" href="#">
                     <img src="./assets/snake.png" alt="" width="50" class="d-inline-block align-text-top"> SnakeVue
                 </a>
-                <a href="#" class="btn btn-light text-black">My Cart :
-                    <i class="fas fa-shopping-cart"></i> {{cartItemCount}}</a>
+                <a href="#" class="btn btn-light text-black" @click="showCheckout">
+                    <span v-if="!showProduct">
+                        My Cart Items:
+                        <i class="fas fa-shopping-cart"></i>
+                        {{cartItemCount || 0}}
+                    </span>
+                    <span v-else>
+                        <i class="fas fa-home"></i>
+                        Home                        
+                    </span>
+                </a>
             </div>
         </nav>
         <br><br>
-        <main class="container">
+        <main class="container" v-if="!showProduct">
 
             <section class="row align-items-center">
                 <h2>{{sitename}}</h2>
@@ -33,15 +43,19 @@
                     <div class="card p-3">
                         <div class="row">
                             <div class="col">
-                                <figure>
-                                    <img src="" class="card-img" alt="">
+                                <figure class="d-flex justify-content-center">
+                                    <img :src="product.image" class="card-img w-50" alt="">
                                 </figure>
                             </div>
                             <div class="col col-expand">
-                                <h3 class="card-title"></h3>
-                                <h4>$<big>0</big></h4>
-                                <p></p>
-                                <a href="#" @click="addToCart" class="btn btn-success mt-5">Add to cart</a>
+                                <h3 class="card-title">{{product.name}}</h3>
+                                <h4><big>{{product.price | formatPrice}}</big></h4>
+                                <p class="mt-2 mb-2">{{product.description}}</p>
+                                <div class="colors">
+                                    <div class="color" v-for="color in product.colors" :style="{background:[color]}"></div>
+                                </div>
+                                <a href="#" v-if="canAddToCart" @click="addToCart" class="btn btn-success mt-5">Add to cart</a>
+                                <a href="#" v-else class="btn btn-disabled mt-5">Add to cart</a>
                                 <br>
 
                             </div>
@@ -51,6 +65,35 @@
                 </div>
 
             </section>
+        </main>
+        <main v-else></main>
+        <main id="cart">
+            <div class="container" v-if="showProduct">
+                <div class="row">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <div class="form p-5">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <input type="text" v-model="order.firstName" class="form-control">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <input type="text" v-model="order.lastName" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <pre>
+                                            First Name : {{order.firstName}}
+                                            Last Name : {{order.lastName}}
+                                        </pre>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-else></div>
         </main>
     </div>
     <script src="js/vue.js"></script>

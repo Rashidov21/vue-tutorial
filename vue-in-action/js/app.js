@@ -2,7 +2,20 @@ let app = new Vue({
     el: '#app',
     data: {
         sitename: 'Vue in Actions!',
-        products: "",
+        showProduct: true,
+        order: {
+            firstName: "",
+            lastName: ""
+        },
+        product: {
+            id: 001,
+            name: "Nike Air Max",
+            price: 12200,
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quasi, maxime soluta corporis aliquam placeat quaerat tempore est consectetur voluptatem omnis nihil, nostrum itaque distinctio aut asperiores. Dolores, totam esse?',
+            itemCount: 3,
+            image: "./assets/nike.jpg",
+            colors: ["#F7C31D", "#B7851D", "#B785C8"]
+        },
         cart: [],
         width: 15,
         height: 3
@@ -33,22 +46,17 @@ let app = new Vue({
     methods: {
         addToCart: function() {
             this.cart.push(this.product.id)
-        }
+        },
+        showCheckout() {
+            this.showProduct = !this.showProduct
+        },
     },
     computed: {
         cartItemCount: function() {
             return this.cart.length || "";
         },
-        getProducts: function() {
-            let data = fetch(" https://www.googleapis.com/content/v2.1/{merchantId}/products/1")
-                .then(response => {
-                    response.json()
-                })
-                .then(products => {
-                    console.log(products)
-
-                })
-            console.log(data)
+        canAddToCart: function() {
+            return this.product.itemCount > this.cartItemCount;
         }
     }
 })
