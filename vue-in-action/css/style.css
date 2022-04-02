@@ -9,3 +9,7 @@
     margin-left: 10px;
     cursor: pointer;
 }
+
+.rating-active {
+    color: rgb(202, 202, 33);
+}

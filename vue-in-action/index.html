@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.css">
+
     <title>Vue-in-Action: Book</title>
 </head>
 
@@ -20,7 +21,7 @@
                     <img src="./assets/snake.png" alt="" width="50" class="d-inline-block align-text-top"> SnakeVue
                 </a>
                 <a href="#" class="btn btn-light text-black" @click="showCheckout">
-                    <span v-if="!showProduct">
+                    <span v-if="showProduct">
                         My Cart Items:
                         <i class="fas fa-shopping-cart"></i>
                         {{cartItemCount || 0}}
@@ -33,29 +34,60 @@
             </div>
         </nav>
         <br><br>
-        <main class="container" v-if="!showProduct">
+        <main class="container" v-if="showProduct">
 
-            <section class="row align-items-center">
-                <h2>{{sitename}}</h2>
-                <br>
-
+            <section class="row align-items-center mt-3" v-for="product in products">
                 <div class="col-md-12">
                     <div class="card p-3">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-sm-12 col-md-6">
                                 <figure class="d-flex justify-content-center">
                                     <img :src="product.image" class="card-img w-50" alt="">
                                 </figure>
                             </div>
-                            <div class="col col-expand">
+                            <div class="col-sm-12 col-md-6 col-expand">
                                 <h3 class="card-title">{{product.name}}</h3>
                                 <h4><big>{{product.price | formatPrice}}</big></h4>
                                 <p class="mt-2 mb-2">{{product.description}}</p>
-                                <div class="colors">
-                                    <div class="color" v-for="color in product.colors" :style="{background:[color]}"></div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="colors mt-2">
+                                            <div class="color" v-for="color in product.colors" :style="{background:[color]}"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="rating">
+                                            <span v-for="n in 5" :class="{'rating-active':checkRating(n, product)}">
+                                                <i class="fas fa-star pl-5 "></i>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <a href="#" v-if="canAddToCart" @click="addToCart" class="btn btn-success mt-5">Add to cart</a>
-                                <a href="#" v-else class="btn btn-disabled mt-5">Add to cart</a>
+                                <div class="row mt-3">
+                                    <div class="col-sm-6">
+                                        <button v-if="canAddToCart(product)" @click="addToCart(product)" type="button" class="btn btn-primary" id="addtocart">
+                                             Add To Cart
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h5>
+                                            <span class="can-add" v-if="product.itemCount - cartCount(product.id) === 0">
+                                                No products for sale
+                                            </span>
+                                            <span class="can-add" v-else-if="product.itemCount">
+                                                Only {{product.itemCount - cartCount(product.id)}} left!
+                                            </span>
+                                            <span class="can-add" v-else>
+                                                Buy Now
+                                            </span>
+                                        </h5>
+                                    </div>
+                                </div>
+
+
+                                <!-- <button v-else type="button" class="btn btn-primary disabled" id="addtocart">
+                                    Add To Cart
+                                </button> -->
                                 <br>
 
                             </div>
@@ -63,11 +95,12 @@
                     </div>
 
                 </div>
+                <!-- ALERTS -->
 
             </section>
         </main>
-        <main v-else></main>
-        <main id="cart">
+
+        <main id="cart" v-else>
             <div class="container" v-if="showProduct">
                 <div class="row">
                     <div class="col-md-4">
@@ -78,13 +111,13 @@
                             <form action="#">
                                 <div class="row card p-2">
                                     <div class="col-sm-8 m-1">
-                                        <input type="text" v-model="order.firstName" class="form-control" placeholder="Firts Name">
+                                        <input type="text" v-model.trim="order.firstName" class="form-control" placeholder="Firts Name">
                                     </div>
                                     <div class="col-sm-8 m-1">
-                                        <input type="text" v-model="order.lastName" class="form-control" placeholder="Last Name">
+                                        <input type="text" v-model.trim="order.lastName" class="form-control" placeholder="Last Name">
                                     </div>
                                     <div class="col-sm-8 m-1">
-                                        <input type="text" v-model="order.address" class="form-control" placeholder="Address">
+                                        <input type="text" v-model.trim="order.address" class="form-control" placeholder="Address">
                                     </div>
                                     <div class="col-sm-8 m-1">
                                         <select name="states" id="" v-model="order.state" class="form-control">
@@ -145,7 +178,9 @@
             <div v-else></div>
         </main>
     </div>
+
     <script src="js/vue.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 
