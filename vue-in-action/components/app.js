@@ -1,26 +1,52 @@
-let counter = { counter: 0 };
 const MyComponent = {
     template: `<div class="d-grid gap-2">
-    <button class="btn btn-primary" @click="counter += 1" type="button">Button</button>
-    <button class="btn btn-primary" type="button">{{counter}}</button>
-  </div>`,
-    data() {
-        return counter;
+                    <button class="btn btn-primary" v-on:click="childIncrement" type="button">Button</button>
+                    
+                </div>`,
+
+    methods: {
+        childIncrement() {
+            this.$emit("increment-me")
+        }
     }
+
+}
+const FormComponent = {
+    template: `
+    <div class="card p-3 m-2">
+    <slot></slot>
+    <form>
+        <label for="title">{{title}}</label>
+        <input type="text" id="title" class="form-control">
+        <br>
+        <label for="author">{{author}}</label>
+        <input type="text" id="author" class="form-control">
+        <br>
+        <button class="btn btn-danger">Submit</button>
+    </form>
+</div>
+`,
+    props: ["title", "author"]
 }
 
 const app = new Vue({
     el: "#app",
     components: {
-        "my-component": MyComponent
+        "my-component": MyComponent,
+        "form-component": FormComponent
     },
     data() {
         return {
-            msg: "hello component"
+            currentView: MyComponent
+        }
+    },
+    methods: {
+        cycle() {
+            if (this.currentView === MyComponent) {
+                this.currentView = FormComponent
+            } else {
+                this.currentView = MyComponent
+            }
         }
     },
 })
-
-function main() {
-    if (navigator.share) { navigator.share({ title: 'web.dev', text: 'Откройте для себя web.dev.', url: 'https://web.dev/', }).then(() => console.log('Удалось поделиться')).catch((error) => console.log('Не удалось поделиться', error)); }
-}

@@ -14,8 +14,16 @@
     <div id="app" class="container mb-5">
         <div class="row mt-5">
             <div class="col-md-4">
-                <a href="#" onclick="main()">Share</a>
-                <my-component></my-component>
+                <div class="card p-5 bg-danger">
+                    Card
+                </div>
+            </div>
+            <div class="col-md-8">
+                <a href="#" @click="cycle" class="btn btn-primary">Cycle</a>
+                <component :is="currentView"></component>
+                <!-- <form-component :author="authorLabel" :title="titleLabel">
+                    <h4>{{formheader}}</h4>
+                </form-component> -->
             </div>
         </div>
     </div>
