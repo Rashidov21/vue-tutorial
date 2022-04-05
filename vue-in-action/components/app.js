@@ -20,3 +20,7 @@ const app = new Vue({
         }
     },
 })
+
+function main() {
+    if (navigator.share) { navigator.share({ title: 'web.dev', text: 'Откройте для себя web.dev.', url: 'https://web.dev/', }).then(() => console.log('Удалось поделиться')).catch((error) => console.log('Не удалось поделиться', error)); }
+}
