@@ -13,10 +13,15 @@
                     <img v-bind:src="product.image" :alt="product.title">
                   </div>
                   <div class="flex-grow-1 ms-3">
-                    <div class="title">{{product.name}}</div>
+                    <div class="title h3">{{product.name}}</div>
+                      <div class="p-2 h4 text-danger">
+                        <big >{{product.price | formatPrice}}</big>
+                        <br>
+                        <i class="fas fa-star" v-for="n in product.rating"></i>
+                      </div>
                       {{product.description}}
                       <div class="card-footer">
-                        <a href="#" class="btn btn-danger">
+                        <a href="#" @click="addTocart" class="btn btn-danger">
                           <i class="fas fa-plus"></i>
                           Add to cart
                         </a>
@@ -41,7 +46,7 @@ export default {
        products: [{
                 id: 1,
                 name: "Nike Predator Star",
-                price: 180200,
+                price: 18020,
                 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quasi, maxime soluta corporis aliquam placeat quaerat tempore est consectetur voluptatem omnis nihil, nostrum itaque distinctio aut asperiores. Dolores, totam esse?",
                 itemCount: 15,
                 image: "../assets/nike2.jpg",
@@ -51,7 +56,7 @@ export default {
             {
                 id: 2,
                 name: "Nike Mercurial",
-                price: 160200,
+                price: 16020,
                 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quasi, maxime soluta corporis aliquam placeat quaerat tempore est consectetur voluptatem omnis nihil, nostrum itaque distinctio aut asperiores. Dolores, totam esse?",
                 itemCount: 15,
                 image: "../assets/nike3.jpg",
@@ -61,7 +66,7 @@ export default {
             {
                 id: 3,
                 name: "Nike Star Meme",
-                price: 123200,
+                price: 12320,
                 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quasi, maxime soluta corporis aliquam placeat quaerat tempore est consectetur voluptatem omnis nihil, nostrum itaque distinctio aut asperiores. Dolores, totam esse?",
                 itemCount: 15,
                 image: "../assets/nike.jpg",
