@@ -1,35 +1,33 @@
 <template>
   <div id="app">
-    <nav>
-      <div class="slot"></div>
-      <div class="slot">
-        <router-link to="/">Home</router-link>
-        <router-link to="/form">Form</router-link>
-      </div>
-      <div class="slot"></div>
-    </nav>
+    <header-component />
+    
     <router-view/>
   </div>
 </template>
+<script>
+import Header from '@/components/Header.vue';
 
+export default {
+  name:"App",
+  components:{
+    "header-component":Header,
+ 
+  }
+}
+</script>
 <style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css');
 *{
   font-family: "Poppins",sans-serif;
   margin: 0;
   padding: 0;
+  list-style: none;
   box-sizing: border-box;
+  transition: all 0.3s;
 }
-.slot{
-  width: 150px;
-}
-nav{
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background: #bfc7c4;
-}
+
 .container{
   display: flex;
   justify-content: center;
