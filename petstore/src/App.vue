@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header-component :cartItemCount="cartItemCount" />
+    <header-component  />
     
     <router-view/>
   </div>
