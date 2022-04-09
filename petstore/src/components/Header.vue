@@ -13,7 +13,8 @@
             <li>
                 <router-link to="/form">
                     <i class="fas fa-shopping-cart"></i>
-                    Cart
+
+                    Cart Items {{cartItemCount}}
                 </router-link>
             </li>
         </ul>       
@@ -27,7 +28,7 @@ export default {
              sitename:"PetStore"
          }
      },
-     props:[]
+     props:[cartItemCount]
 }
 </script>
 <style scoped>

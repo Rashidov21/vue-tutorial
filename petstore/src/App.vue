@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header-component />
+    <header-component :cartItemCount="cartItemCount" />
     
     <router-view/>
   </div>
@@ -10,6 +10,21 @@ import Header from '@/components/Header.vue';
 
 export default {
   name:"App",
+  data(){
+    return{
+      cart:[]
+    }
+  },
+  methods: {
+    addToCart(item){
+      this.cart.push(item.id)
+    },
+  },
+  computed:{
+    cartItemCount(){
+      return this.cart.length || ""
+    }
+  },
   components:{
     "header-component":Header,
  

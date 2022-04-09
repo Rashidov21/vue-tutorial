@@ -21,7 +21,7 @@
                       </div>
                       {{product.description}}
                       <div class="card-footer">
-                        <a href="#" @click="addTocart" class="btn btn-danger">
+                        <a href="#" @click="addToCart" class="btn btn-danger">
                           <i class="fas fa-plus"></i>
                           Add to cart
                         </a>
@@ -75,7 +75,6 @@ export default {
             },
 
         ],
-        cart: [],
    
     }
   },
@@ -104,7 +103,8 @@ export default {
       // addToCart(item){
       //   this.cart.push(item.id)
       // }
-  }
+  },
+  props:[addToCart]
 }
 </script>
 
