@@ -50,8 +50,15 @@ export default {
     },
     created:function() {
       let pId = this.$route.params.id
-       this.product = Items.products[1]
-       console.log(this.product)
+    //    this.product = Items.products[1]
+    //    console.log(this.product)
+    Items.products.forEach(element => {
+        if(element.id === pId){
+            this.product = element
+            
+            return this.product
+        }    
+    });
 },
 
 }

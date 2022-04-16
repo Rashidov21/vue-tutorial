@@ -5,7 +5,7 @@
             "price": 180200,
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quasi, maxime soluta corporis aliquam placeat quaerat tempore est consectetur voluptatem omnis nihil, nostrum itaque distinctio aut asperiores. Dolores, totam esse?",
             "itemCount": 15,
-            "image": "./assets/nike3.jpg",
+            "image": "../src/assets/nike3.jpg",
             "colors": ["#F7C31D", "#B7851D", "#B785C8"],
             "rating": 3
         },
@@ -28,6 +28,26 @@
             "image": "./assets/nike.jpg",
             "colors": ["#F7C31D", "#B7851D", "#B785C8"],
             "rating": 3
+        },
+        {
+            "id": 4,
+            "name": "Adidas Predator",
+            "price": 100220,
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quasi, maxime soluta corporis aliquam placeat quaerat tempore est consectetur voluptatem omnis nihil, nostrum itaque distinctio aut asperiores. Dolores, totam esse?",
+            "itemCount": 15,
+            "image": "./assets/nike.jpg",
+            "colors": ["#F7C31D", "#B7851D", "#B785C8"],
+            "rating": 5
+        },
+        {
+            "id": 5,
+            "name": "Rebook Mania",
+            "price": 190200,
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quasi, maxime soluta corporis aliquam placeat quaerat tempore est consectetur voluptatem omnis nihil, nostrum itaque distinctio aut asperiores. Dolores, totam esse?",
+            "itemCount": 10,
+            "image": "./assets/nike.jpg",
+            "colors": ["#F7C31D", "#B7851D", "#B785C8"],
+            "rating": 6
         }
     ]
 }

@@ -46,43 +46,14 @@
 </template>
 
 <script>
+import Products from './products.json'
 export default {
+
   name: 'Main',
   // props: [],
   data(){
     return{
-       products: [{
-                id: 1,
-                name: "Nike Predator Star",
-                price: 18020,
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quasi, maxime soluta corporis aliquam placeat quaerat tempore est consectetur voluptatem omnis nihil, nostrum itaque distinctio aut asperiores. Dolores, totam esse?",
-                itemCount: 15,
-                image: require("@/assets/nike2.jpg"),
-                colors: ["#F7C31D", "#B7851D", "#B785C8"],
-                rating: 3
-            },
-            {
-                id: 2,
-                name: "Nike Mercurial",
-                price: 16020,
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quasi, maxime soluta corporis aliquam placeat quaerat tempore est consectetur voluptatem omnis nihil, nostrum itaque distinctio aut asperiores. Dolores, totam esse?",
-                itemCount: 15,
-                image: require("@/assets/nike3.jpg"),
-                colors: ["#F7C31D", "#B7851D", "#B785C8"],
-                rating: 4
-            },
-            {
-                id: 3,
-                name: "Nike Star Meme",
-                price: 12320,
-                description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quasi, maxime soluta corporis aliquam placeat quaerat tempore est consectetur voluptatem omnis nihil, nostrum itaque distinctio aut asperiores. Dolores, totam esse?",
-                itemCount: 15,
-                image: require("@/assets/nike.jpg"),
-                colors: ["#F7C31D", "#B7851D", "#B785C8"],
-                rating: 5
-            },
-
-        ],
+       products: Products.products
    
     }
   },
