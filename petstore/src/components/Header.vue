@@ -2,10 +2,10 @@
     <nav>
         <ul>
             <li class="brand">
-                <a href="#">
+                <router-link to="/">
                     <i class="fas fa-cat"></i>
                     {{sitename}}
-                </a>
+                </router-link>
             </li>
             <li>
                  <router-link to="/">Home</router-link>

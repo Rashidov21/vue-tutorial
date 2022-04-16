@@ -9,12 +9,12 @@
               <div class="product">
                 <div class="row">
                   <div class="col-sm-5">                    
-                    <a href="#">
+                    <router-link :to="{name:'product', params:{id:product.id}}">
                       <img class="product-img" v-bind:src="product.image" :alt="product.title">
-                    </a>
+                    </router-link>
                   </div>
                   <div class="col-sm-7">
-                    <router-link :to="{name:'product', query:{id:product.id}}">
+                    <router-link :to="{name:'product', params:{id:product.id}}">
                       {{product.name}}
                     </router-link>
                    <!-- <router-link :to="{name:'Product', params:{id:product.id}}">
