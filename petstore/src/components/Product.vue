@@ -20,7 +20,7 @@
                       </div>
                    </router-link> -->
                       <div class="p-2 h4 text-danger">
-                        <big >{{product.price | formatPrice}}</big>
+                        <big >{{product.price}}</big>
                         <br>
                         <i class="fas fa-star" v-for="n in product.rating"></i>
                       </div>
@@ -40,6 +40,7 @@
     </div>
 </template>
 <script>
+import Items from './products.json'
 export default {
     name:'Product',
     data(){
@@ -48,10 +49,9 @@ export default {
         }
     },
     created:function() {
-    axios.get('/assets/products.json')
-    .then((data) => {
-        console.log(data)
-    })
+      let pId = this.$route.params.id
+       this.product = Items.products[1]
+       console.log(this.product)
 },
 
 }
