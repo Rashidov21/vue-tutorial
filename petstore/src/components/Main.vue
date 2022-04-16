@@ -9,10 +9,19 @@
               <div class="product">
                 <div class="row">
                   <div class="col-sm-5">                    
-                    <img class="product-img" v-bind:src="product.image" :alt="product.title">
+                    <a href="#">
+                      <img class="product-img" v-bind:src="product.image" :alt="product.title">
+                    </a>
                   </div>
                   <div class="col-sm-7">
-                    <div class="title h3">{{product.name}}</div>
+                    <router-link :to="{name:'product', query:{id:product.id}}">
+                      {{product.name}}
+                    </router-link>
+                   <!-- <router-link :to="{name:'Product', params:{id:product.id}}">
+                      <div class="title h3">{{product.name}}
+                        
+                      </div>
+                   </router-link> -->
                       <div class="p-2 h4 text-danger">
                         <big >{{product.price | formatPrice}}</big>
                         <br>

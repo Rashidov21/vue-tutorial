@@ -32,8 +32,7 @@ export default {
 }
 </script>
 <style>
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css');
+
 *{
   font-family: "Poppins",sans-serif;
   margin: 0;

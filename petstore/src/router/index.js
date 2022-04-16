@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Main from '@/components/Main'
 import Form from '@/components/Form'
+import Product from '@/components/Product'
 
 Vue.use(VueRouter)
 
@@ -14,6 +15,12 @@ const routes = [{
         path: '/form',
         name: 'form',
         component: Form
+    },
+    {
+        path: '/product/:id',
+        name: 'product',
+        component: Product,
+        props: true
     },
 
 ]
