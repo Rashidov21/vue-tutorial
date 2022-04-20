@@ -4,6 +4,7 @@ import Main from '@/components/Main'
 import Form from '@/components/Form'
 import Product from '@/components/Product'
 import Food from '@/components/Food'
+import Movie from '@/components/Movie'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,12 @@ const routes = [{
         path: '/food',
         name: 'food',
         component: Food,
+        props: true
+    },
+    {
+        path: '/movies',
+        name: 'movie',
+        component: Movie,
         props: true
     },
 

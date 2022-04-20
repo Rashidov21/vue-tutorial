@@ -8,7 +8,22 @@
                 </router-link>
             </li>
             <li>
-                 <router-link to="/">Home</router-link>
+                 <router-link to="/">
+                 <i class="fas fa-home"></i>
+                 Home
+                 </router-link>
+            </li>
+             <li>
+                 <router-link to="/food">
+                 <i class="fas fa-cake"></i>
+                 Food
+                 </router-link>
+            </li>
+            <li>
+                 <router-link to="/movies">
+                 <i class="fas fa-film"></i>
+                 Movie
+                 </router-link>
             </li>
             <li>
                 <router-link to="/form">
