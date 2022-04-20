@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/bootstrap.css">
+    <title>TASK</title>
+</head>
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+    }
+</style>
+
+<body>
+    <div class="container mt-5 mb-5 p-5">
+        <div class="row" id="fullname">
+            <div class="col-md-12 mt-5 mb-5 p-5">
+                <div class="card">
+                    <div class="p-3">
+                        <div class="box" v-bind:style="{height:height + 'px',width:width+'px', background:'orange'}"></div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-range" v-model="width" id="width" type="range" min="0" max="500">
+                        <label class="form-check-label" for="width">
+                      Width {{width}}px
+                    </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-range" v-model="height" id="height" type="range" min="0" max="500">
+                        <label class="form-check-label" for="height">
+                      Height {{height}}px
+                    </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 mb-2">
+                <div class="col-sm-12">
+                    <div class="form-check">
+                        <input v-model="loremShow" class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                      Lorem ?
+                    </label>
+                    </div>
+                    <h4 v-if="loremShow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quaerat ad quam.</h4>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-check">
+                        <input v-model="radioValue" v-bind:value="css" type="radio" name="lang" id="css">
+                        <label class="form-check-label" for="css">
+                        CSS ?
+                        </label>
+                        <br>
+                        <input v-model="radioValue" v-bind:value="html" type="radio" name="lang" id="html">
+                        <label class="form-check-label" for="html">
+                        HTML ?
+                        </label>
+                        <br>
+                        <input v-model="radioValue" v-bind:value="js" type="radio" name="lang" id="js">
+                        <label class="form-check-label" for="js">
+                        JavaScript ?
+                        </label>
+                    </div>
+                    <h2>{{radioValue}}</h2>
+                    <h4 v-if="loremShow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quaerat ad quam.</h4>
+                </div>
+            </div>
+            <div class="col-sm-12 mb-2">
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Name</label>
+                        <input v-model="name" type="text" class="form-control" id="inputEmail4">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Surname</label>
+                        <input v-model="surname" type="text" class="form-control" id="inputPassword4">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <input v-model="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress2" class="form-label">Address 2</label>
+                        <input v-model="address2" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCity" class="form-label">City</label>
+                        <input v-model="city" type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">State</label>
+                        <select id="inputState" class="form-select" v-model="state">
+                        <option selected>Choose...</option>
+                        <option v-for="item in states" v-bind:value="item.name">{{item.name}}</option>
+
+                      </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="inputZip" class="form-label">Zip</label>
+                        <input v-model="zip" type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input v-model="checkme" class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                          Check me out
+                        </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Order</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-12">
+                <ul>
+                    <li>
+                        <b>Name:</b><big>{{name}}</big>
+                    </li>
+                    <li>
+                        <b>SurName:</b><big>{{surname}}</big>
+                    </li>
+                    <li>
+                        <b>Address:</b><big>{{address}}</big>
+                    </li>
+                    <li>
+                        <b>Address 2:</b><big>{{address2}}</big>
+                    </li>
+                    <li>
+                        <b>City:</b><big>{{city}}</big>
+                    </li>
+                    <li>
+                        <b>Zip:</b><big>{{zip}}</big>
+                    </li>
+                    <li>
+                        <b>State:</b><big>{{state}}</big>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <script src="../src/js/vue.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
