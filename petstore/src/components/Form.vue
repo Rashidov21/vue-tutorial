@@ -2,16 +2,7 @@
       <div class="container">
         
           <div class="mt-3 p-2">
-              <div class="row mb-3">
-                  <div class="col-sm-12 col-md-6">
-                      <form action="#" method="get" >
-                          <input type="search" v-model="query"
-                          class="form-control"
-                          placeholder="Search collections">
-                      </form>
-                      <a href="#" class="btn btn-danger" >Get Photo</a>
-                  </div>
-              </div>
+
             <div class="row">
                 <div class="col-sm-12 col-md-3" v-for="image in info">
                       <div class="card">
@@ -43,7 +34,7 @@ export default {
         }
     },
     methods:{
-   
+      
     },
     mounted() {
         axios
