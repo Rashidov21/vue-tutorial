@@ -6,7 +6,7 @@
                 <div class="row">
                   <div class="col-sm-5">                    
                     <router-link :to="{name:'product', params:{id:product.id}}">
-                      <img class="product-img" v-bind:src="product.image" :alt="product.title">
+                      <img class="product-img" src="../assets/logo.png" :alt="product.title">
                     </router-link>
                   </div>
                   <div class="col-sm-7">

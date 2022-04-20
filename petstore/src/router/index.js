@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Main from '@/components/Main'
 import Form from '@/components/Form'
 import Product from '@/components/Product'
+import Gallery from '@/components/Gallery'
 
 Vue.use(VueRouter)
 
@@ -22,7 +23,12 @@ const routes = [{
         component: Product,
         props: true
     },
-
+    {
+        path: '/images',
+        name: 'gallery',
+        component: Gallery,
+        props: true
+    },
 ]
 
 const router = new VueRouter({
