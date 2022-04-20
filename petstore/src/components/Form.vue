@@ -1,7 +1,17 @@
 <template>
       <div class="container">
-          <h4>test</h4>
+        
           <div class="mt-3 p-2">
+              <div class="row mb-3">
+                  <div class="col-sm-12 col-md-6">
+                      <form action="#" method="get" >
+                          <input type="search" v-model="query"
+                          class="form-control"
+                          placeholder="Search collections">
+                      </form>
+                      <a href="#" class="btn btn-danger" >Get Photo</a>
+                  </div>
+              </div>
             <div class="row">
                 <div class="col-sm-12 col-md-3" v-for="image in info">
                       <div class="card">
@@ -23,9 +33,17 @@ export default {
     name:"Form",
      data(){
         return{
+            myID :"?client_id=DAtzSsXFMCOsjXg03P5WiaVwwno54XVrtE4pBBmRTrw",
+            collections :"https://api.unsplash.com/collections",
             url:"https://api.unsplash.com/photos?client_id=DAtzSsXFMCOsjXg03P5WiaVwwno54XVrtE4pBBmRTrw",
-            info:null
+            searchUrl:`https://api.unsplash.com/search/collections`, //?page=1&query=office
+            info:null,
+            query:'animal',
+            pageNum:1
         }
+    },
+    methods:{
+   
     },
     mounted() {
         axios
