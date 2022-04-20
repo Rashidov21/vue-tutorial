@@ -34,15 +34,8 @@ export default {
         return{
             showResults:false,
             query:'animal',
-            foods:null
-           
-        }
-    },
-    methods:{
-
-    },
-    mounted() {
-         const options = {
+            foods:null,
+            options: {
             method: 'GET',
             url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch',
             params: {
@@ -56,17 +49,24 @@ export default {
                 'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
                 'X-RapidAPI-Key': '0202709d4emshbe87778ed9b4962p1f76cdjsn4a200e532763'
             }
-            };
+            },
+           
+        }
+    },
+    methods:{
 
-            axios.request(options).then(function (response) {
-                // this.recepts = response.data.results;
-                if(response.data.results){
-                    this.foods = response.data.results;
-                }
-                console.log(response.data.results)
-            }).catch(function (error) {
-                console.error(error);
-            });
+    },
+    mounted() {  
+        axios.request(this.options).then(function (response) {
+            if(response.data.results){
+                // this.foods = response.data.results;
+                console.log(this.foods)
+                
+            }
+            // console.log(response.data.results)
+        }).catch(function (error) {
+            console.error(error);
+        });
 
     }
 
