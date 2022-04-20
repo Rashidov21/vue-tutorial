@@ -2,14 +2,24 @@
       <div class="container">
         
           <div class="mt-3 p-2">
-              <div class="row mb-3">
-                  <div class="col-sm-12 col-md-6">
-                      <form action="#" method="get" >
-                          <input type="search" v-model="query"
-                          class="form-control"
-                          placeholder="Search collections">
-                      </form>
-                      <a href="#" class="btn btn-danger" @click='getFoods' >Get Photo</a>
+
+               <div class="row mb-3">
+                  <div class="col-sm-12 col-md-3" v-for="item in foods">
+                      <div class="row">
+                          <div class="col s12 m4 l4">
+                              <div class="card p-1">
+                                  <div class="card-content">
+                                      <span class="card-title">{{item.title}}</span>
+                                      <p>I am a very simple card. I am good at containing small bits of information.
+                                          I am convenient because I require little markup to use effectively.</p>
+                                  </div>
+                                  <div class="card-action">
+                                      <a href="#" class="btn blue lighten-1">This is a link</a>
+                                      <a href="#" class="btn blue darken-1">This is a link</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
                   </div>
               </div>
 
@@ -24,13 +34,15 @@ export default {
         return{
             showResults:false,
             query:'animal',
+            foods:null
            
         }
     },
     methods:{
-        getFoods(){
-      
-            const options = {
+
+    },
+    mounted() {
+         const options = {
             method: 'GET',
             url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch',
             params: {
@@ -47,14 +59,14 @@ export default {
             };
 
             axios.request(options).then(function (response) {
-                console.log(response.data.results);
+                // this.recepts = response.data.results;
+                if(response.data.results){
+                    this.foods = response.data.results;
+                }
+                console.log(response.data.results)
             }).catch(function (error) {
                 console.error(error);
             });
-        }
-    },
-    mounted() {
-       
 
     }
 
