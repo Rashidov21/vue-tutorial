@@ -1,30 +1,32 @@
 <template>
-  <nav>
-      <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">About</a></li>
-      </ul>
-  </nav>
+    <nav>
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 </template>
 <script>
 export default {
     name:'navbar-component'
-    
 }
 </script>
-<style scoped>
-nav ul{
+<style>
+nav{
+    width: 100%;
+
+}
+.nav{
     display: flex;
     justify-content: flex-end;
-    align-content: center;
+    align-items: center;
 }
-nav ul li{
-    margin: 3px 50px;
+.nav li{
+    margin: 0 30px;
 }
-nav ul li a{
+.nav li a{
     font-size: 1.8em;
-    color: cadetblue;
-    text-decoration: none;
+    color: orange;
 }
 </style>

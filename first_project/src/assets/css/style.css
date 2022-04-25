@@ -1,0 +1,12 @@
+* {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    padding-left: 5%;
+    padding-right: 5%;
+}
