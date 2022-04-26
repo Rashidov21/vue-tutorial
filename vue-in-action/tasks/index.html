@@ -14,11 +14,32 @@
         height: 100px;
         background-color: orange;
     }
+    
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 1s ease-in-out;
+    }
+    
+    .fade-enter,
+    .fade-leave-to {
+        opacity: 0;
+    }
 </style>
 
 <body>
+
     <div class="container mt-5 mb-5 p-5">
         <div class="row" id="fullname">
+            <div class="container mt-5 mb-5 p-5">
+                <h3>{{title}}</h3>
+                <transition name="fade">
+                    <div v-if="show">
+                        <h5>{{desc}}</h5>
+                    </div>
+
+                </transition>
+                <a href="#" @click="show = !show" class="btn btn-primary">Transition</a>
+            </div>
             <div class="col-md-12 mt-5 mb-5 p-5">
                 <div class="card">
                     <div class="p-3">
@@ -147,5 +168,7 @@
     <script src="../src/js/vue.js"></script>
     <script src="./app.js"></script>
 </body>
+
+</html>
 
 </html>

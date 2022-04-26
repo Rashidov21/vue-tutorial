@@ -2,6 +2,10 @@ const fullName = new Vue({
     el: "#fullname",
     data() {
         return {
+            // TransitionEvent
+            title: "War and Peace",
+            desc: "Javascript Programming Language",
+            show: false,
             height: 100,
             width: 100,
             loremShow: false,
