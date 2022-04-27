@@ -71,6 +71,7 @@
 </template>
 
 <script>
+
 export default {
 name:"HomeContent"
 }

@@ -2,7 +2,7 @@
   <div id="app">
     <Header/>
     <Banner />
-    <HomeContent />
+    <router-view />
     <Footer />
   </div>
 </template>
@@ -12,14 +12,14 @@
 import Header from './components/Header.vue'
 import Banner from './components/Banner.vue'
 import Footer from './components/Footer.vue'
-import HomeContent from './components/HomeContent.vue'
+
 export default {
   name: 'App',
   components: {
     Header,
     Banner,
     Footer,
-    HomeContent
+    
   }
 }
 </script>
