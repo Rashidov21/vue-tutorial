@@ -31,12 +31,17 @@
         <div class="columns">
             <div class="column is-9">
                 <!-- POSTS  -->
-                <div class="columns">
-                    <div class="column is-3">
-                        <div class="notification">
-                            <button class="delete"></button>
-                            Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur.
+                <div class="columns is-tablet">
+                    <div class="column is-full" v-for="quote, key in quotes" v-bind:key="key">
+                        <div class="notification is-info">
+                            <div class="subtitle">{{quote.author}}</div>
+                            
+                            <div class="content">
+                                {{quote.content}}
+                            </div>
+                             <span class="tag is-warning is-light m-1" v-for="tag, key in quote.tags" v-bind:key="key">
+                                {{tag}}
+                             </span>                         
                         </div>
                     </div>
                 </div>
@@ -50,7 +55,22 @@
 
 <script>
 export default {
-    name:'MainComponent'
+    name:'MainComponent',
+    data(){
+        return{
+          quotes:[]  
+        }
+    },
+    mounted(){
+        fetch("https://api.quotable.io/quotes")
+        .then(response =>response.json())
+        .then(data => {
+            // console.log(data.results)
+            for(let quote of data.results){
+                this.quotes.push(quote)
+            }
+        })
+    }
 }
 </script>
 <style scoped>
