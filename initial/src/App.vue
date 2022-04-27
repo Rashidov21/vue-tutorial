@@ -19,7 +19,8 @@ export default {
 
 <style>
 @import 'bulma/css/bulma.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 *{
-  transition: all 0.5s ease-in-out; 
+  font-family: 'Poppins', sans-serif;
 }
 </style>

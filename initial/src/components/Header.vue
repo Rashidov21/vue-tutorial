@@ -57,6 +57,7 @@
     </div>
   </div>
 </nav>
+
 </template>
 <script>
 export default {
@@ -89,5 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <style scoped>
-
+nav{
+    background-color: #41B883;
+}
 </style>
