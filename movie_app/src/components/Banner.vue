@@ -19,7 +19,7 @@
               </div>
                 <div class="column is-6">
                <div class="content">
-                   <img src="../assets/logo.png" alt="">
+                   <img src="../assets/img/popcorn.png" width="50%" alt="">
                </div>
               </div>
           </div>

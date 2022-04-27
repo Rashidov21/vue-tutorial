@@ -14,9 +14,7 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item has-text-white">
-        Home
-      </a>
+     <router-link to="/">Home</router-link>
 
      
 
@@ -41,9 +39,8 @@
           </a>
         </div>
       </div>
-       <a class="navbar-item has-text-white">
-        Contact
-      </a>
+       <router-link to="/about">About</router-link>
+       <router-link to="/contact">Contact</router-link>
     </div>
 
     <div class="navbar-end">

@@ -1,4 +1,5 @@
 <template>
+<Banner/>
   <section class="section">
       <div class="container">
           <div class="content has-text-centered">
@@ -71,9 +72,12 @@
 </template>
 
 <script>
-
+import Banner from './components/Banner.vue'
 export default {
-name:"HomeContent"
+    name:"HomeContent",
+    components:{
+        Banner
+    }
 }
 </script>
 

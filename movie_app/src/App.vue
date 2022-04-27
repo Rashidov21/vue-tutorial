@@ -1,25 +1,36 @@
 <template>
   <div id="app">
+    <!-- <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </nav> -->
     <Header/>
-    <Banner />
-    <router-view />
-    <Footer />
+    
+    <router-view/>
+    <Footer/>
   </div>
 </template>
 
 <script>
-
 import Header from './components/Header.vue'
-import Banner from './components/Banner.vue'
-import Footer from './components/Footer.vue'
 
+import Footer from './components/Footer.vue'
 export default {
   name: 'App',
   components: {
     Header,
-    Banner,
     Footer,
     
+  },
+  data(){
+    return{
+      showBanner:false
+    }
+  },
+  mounted(){
+    if(this.$router.history.current.name == "home"){
+      this.showBanner = true
+    }
   }
 }
 </script>
