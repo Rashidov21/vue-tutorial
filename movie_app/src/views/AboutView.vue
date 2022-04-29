@@ -5,7 +5,7 @@
       <div class="container">
         <div class="content has-text-centered">
           <div class="title">
-            About Page
+              About Page
           </div>
         </div>
       </div>
