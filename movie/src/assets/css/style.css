@@ -1,0 +1,17 @@
+/* @import url('../fonts/Roboto-Regular.ttf');
+@import url('../fonts/Roboto-Medium.ttf');
+@import url('../fonts/Roboto-Bold.ttf'); */
+@font-face {
+    font-family: sans-serif;
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+*{
+    font-family: 'Roboto', sans-serif;
+}
+h3{
+    font-family: 'Roboto', sans-serif;  
+    font-weight: bold;
+}
+nav.navbar{
+    background-color:#4067B7 ;
+}
