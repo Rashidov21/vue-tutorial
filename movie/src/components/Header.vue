@@ -8,16 +8,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+          <a class="nav-link active text-white" aria-current="page" href="#">Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Features</a>
+          <a class="nav-link text-white" href="#">Serials</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Pricing</a>
-        </li>
+          <a class="nav-link text-white" href="#">Cartoon</a>
+
         <li class="nav-item">
-          <a class="nav-link text-white" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <input type="search" placeholder="Search movie ..." class="form-control">
         </li>
       </ul>
     </div>

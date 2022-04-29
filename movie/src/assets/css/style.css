@@ -15,3 +15,23 @@ h3{
 nav.navbar{
     background-color:#4067B7 ;
 }
+.movie{
+    max-width: 300px;
+    min-height:250px ;
+    /* border: solid 1px red; */
+    background-color: aquamarine;
+}
+.movie .movie-img{
+    width: 100%;
+   
+}
+.movie .movie-img img{
+    width: 100%;
+    border-radius: none;
+}
+.movie .movie-info .title{
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 30px;
+}
