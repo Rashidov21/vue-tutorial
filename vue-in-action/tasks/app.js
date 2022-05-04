@@ -1,42 +1,37 @@
-const fullName = new Vue({
-    el: "#fullname",
+const app = new Vue({
+    el: "#task",
     data() {
         return {
-            // TransitionEvent
-            title: "War and Peace",
-            desc: "Javascript Programming Language",
-            show: false,
-            height: 100,
-            width: 100,
-            loremShow: false,
-            radioValue: false,
-            // text data
-            html: "HTML - HyperText Markup Language",
-            css: "Cascading Style Sheet",
-            js: "Javascript Programming Language",
-
-            name: '',
-            surname: '',
-            address: '',
-            address2: '',
-            city: '',
-            state: '',
-            states: [
-                { name: "Andijan" },
-                { name: "Namangan" },
-                { name: "Fergana" }
-            ],
-            zip: '',
-            checkme: false
+            letter:null,
+            letters:"qwerty".split(""),
+            resultData:null
         }
     },
     methods: {
-        getSize() {
-            console.log(this.height, this.width)
-        }
-
+     showRightLetter(){
+         if(this.letter){
+             this.resultData = this.letters[this.letters.indexOf(this.letter) + 1]
+         }
+     } 
     },
-    computed: {
 
-    }
 });
+
+const peoples = [
+    {
+        name:"John",
+        age:35
+    },
+    {
+        name:"Mike",
+        age:23
+    },
+    {
+        name:"Bruce",
+        age:12
+    },
+    {
+        name:"David",
+        age:42
+    },
+]
