@@ -12,7 +12,8 @@ export default {
   name:"App",
   data(){
     return{
-      cart:[]
+      cart:[],
+
     }
   },
   methods: {

@@ -16,6 +16,7 @@
                   <div class="col-sm-7">
                     <router-link :to="{name:'product', params:{id:product.id}}">
                       {{product.name}}
+                      
                     </router-link>
                    <!-- <router-link :to="{name:'Product', params:{id:product.id}}">
                       <div class="title h3">{{product.name}}
@@ -82,7 +83,7 @@ export default {
   methods:{
 
   },
-  props:[addToCart]
+  props:[]
 }
 </script>
 
