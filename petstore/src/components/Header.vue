@@ -1,33 +1,23 @@
 <template>
     <nav>
-        <ul>
-            <li class="brand">
-                <router-link to="/">
-                    <i class="fas fa-cat"></i>
+        <ul class="navbar">
+            <li class="navbar-brand">
+                <router-link to="/" class="navbar-brand text-primary "> 
+                    <!-- <i class="fas fa-cat"></i> -->
                     {{sitename}}
                 </router-link>
             </li>
             <li>
-                 <router-link to="/">
-                 <i class="fas fa-home"></i>
+                 <router-link to="/"  class="nav-link">
+                 <!-- <i class="fas fa-home"></i> -->
                  Home
                  </router-link>
             </li>
-             <li>
-                 <router-link to="/food">
-                 <i class="fas fa-cake"></i>
-                 Food
-                 </router-link>
-            </li>
+
+      
             <li>
-                 <router-link to="/movies">
-                 <i class="fas fa-film"></i>
-                 Movie
-                 </router-link>
-            </li>
-            <li>
-                <router-link to="/form">
-                    <i class="fas fa-shopping-cart"></i>
+                <router-link to="/form" class="nav-link">
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
 
                     Cart Items 
                 </router-link>

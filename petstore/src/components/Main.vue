@@ -2,9 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="text-center">
-        <h3>Main Products</h3>
+        <h3 class="fs-1 text-muted font-weight-bold mt-3 mb-5">Main Products</h3>
         <div class="mt-3">
-          <div class="row pl-3 pr-3"  v-for="product in products">
+          <div class="row pl-3 pr-3"  v-for="product, key in products" v-bind:key="key">
             <div class="col-sm-12 col-md-12">
               <div class="product">
                 <div class="row">

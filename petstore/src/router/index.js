@@ -3,8 +3,8 @@ import VueRouter from 'vue-router'
 import Main from '@/components/Main'
 import Form from '@/components/Form'
 import Product from '@/components/Product'
-import Food from '@/components/Food'
-import Movie from '@/components/Movie'
+// import Food from '@/components/Food'
+// import Movie from '@/components/Movie'
 
 Vue.use(VueRouter)
 
@@ -24,18 +24,18 @@ const routes = [{
         component: Product,
         props: true
     },
-    {
-        path: '/food',
-        name: 'food',
-        component: Food,
-        props: true
-    },
-    {
-        path: '/movies',
-        name: 'movie',
-        component: Movie,
-        props: true
-    },
+    // {
+    //     path: '/food',
+    //     name: 'food',
+    //     component: Food,
+    //     props: true
+    // },
+    // {
+    //     path: '/movies',
+    //     name: 'movie',
+    //     component: Movie,
+    //     props: true
+    // },
 
 ]
 
