@@ -1,26 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+  <main>
+    <section class="section">
+      <div class="columns">
+        <div class="column is-10">
+          <ArticleComponent />
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ArticleComponent from './components/Article.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  ArticleComponent
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  font-family: "Poppins",sans-serif;
 }
 </style>
