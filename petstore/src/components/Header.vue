@@ -30,7 +30,8 @@ export default {
     name:"Header",
      data(){
          return{
-             sitename:"PetStore"
+             sitename:"PetStore",
+            //  cartLength:cart.length
          }
      },
      props:[]
