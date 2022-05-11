@@ -8,18 +8,22 @@
         Most Popular Movies
       </div>
       <div class="row">
-        <div class="col-sm-6 col-md-3 col-lg-4"
+        <div class="col-sm-6 col-md-3 col-lg-4 mt-2"
         v-for="movie , key in movies"
         v-bind:key="key">
           <div class="movie">
-            <!-- <div class="movie-img">
-              <img src="../assets/img/poster.png" alt="">
-            </div> -->
-            <div class="movie-info">
-              <a v-bind:href="movie.movie_imdb_link" class="title">
-                {{movie.movie_title}}
-              </a>
+            <div class="movie-img">
+              <router-link
+              :to="{name:'detail',params:{id:movie.id}}">
+                <img :src="movie.poster" alt="">
+              </router-link>
+             
             </div>
+            <!-- <div class="movie-info">
+              <a v-bind:href="movie.title" class="title">
+                {{movie.title}}
+              </a>
+            </div> -->
           </div>
         </div>
       </div>
@@ -32,7 +36,7 @@
  /* eslint-disable */
 import Header from '../components/Header.vue'
 const axios = require('axios').default;
-import data from '../assets/data.json';
+import data from '../assets/movies.json';
 export default {
   name: 'HomeView',
   data(){
